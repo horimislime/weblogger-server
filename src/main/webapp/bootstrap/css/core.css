@@ -1,0 +1,504 @@
+#SP_sandbox {
+  position: fixed;
+  direction: ltr;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  z-index: 2147483647;
+}
+
+.SP_sandbox,.SP_sandbox ABBR,.SP_sandbox ACRONYM,.SP_sandbox ADDRESS,.SP_sandbox B,.SP_sandbox BIG,.SP_sandbox BLOCKQUOTE,.SP_sandbox CAPTION,.SP_sandbox CENTER,.SP_sandbox CITE,.SP_sandbox CODE,.SP_sandbox DD,.SP_sandbox DIV,.SP_sandbox DL,.SP_sandbox DT,.SP_sandbox EM,.SP_sandbox EMBED,.SP_sandbox FONT,.SP_sandbox FORM,.SP_sandbox H1,.SP_sandbox H2,.SP_sandbox H3,.SP_sandbox H4,.SP_sandbox H5,.SP_sandbox H6,.SP_sandbox I,.SP_sandbox IFRAME,.SP_sandbox IMG,.SP_sandbox LABEL,.SP_sandbox LEGEND,.SP_sandbox LI,.SP_sandbox MAP,.SP_sandbox OBJECT,.SP_sandbox OL,.SP_sandbox P,.SP_sandbox PRE,.SP_sandbox SMALL,.SP_sandbox SPAN,.SP_sandbox STRIKE,.SP_sandbox STRONG,.SP_sandbox SUB,.SP_sandbox SUP,.SP_sandbox TABLE,.SP_sandbox TBODY,.SP_sandbox TD,.SP_sandbox TFOOT,.SP_sandbox TH,.SP_sandbox THEAD,.SP_sandbox TR,.SP_sandbox TT,.SP_sandbox U,.SP_sandbox UL,.SP_sandbox a,.SP_sandbox a:link,.SP_sandbox a:hover,.SP_sandbox a:visited,.SP_sandbox a:active,.SP_sandbox article,.SP_sandbox aside,.SP_sandbox canvas,.SP_sandbox details,.SP_sandbox figcaption,.SP_sandbox figure,.SP_sandbox footer,.SP_sandbox header,.SP_sandbox hgroup,.SP_sandbox mark,.SP_sandbox menu,.SP_sandbox meter,.SP_sandbox nav,.SP_sandbox output,.SP_sandbox progress,.SP_sandbox section,.SP_sandbox summary,.SP_sandbox small,.SP_sandbox time
+{position:relative;font-style:normal;border:0px;background:transparent none;color:#595959;padding:0px;text-align:left;line-height: 18px;font-size: 13px; font-weight: normal; font-family: Helvetica, Arial, Verdana, sans-serif !important; }
+.SP_sandbox DIV,.SP_sandbox TABLE,.SP_sandbox TR,.SP_sandbox TH,.SP_sandbox TD{height:auto;width:auto; }
+.SP_sandbox,.SP_sandbox *{border-collapse:collapse;margin:0px;font:normal normal normal 12px/normal;text-transform:none;text-decoration:none;clear:none;cursor:auto;float:none;outline:none;letter-spacing:normal;word-spacing:normal;text-indent:0px;white-space:normal;vertical-align:baseline;-moz-box-shadow:none;box-shadow:none;}
+.SP_sandbox TD{vertical-align:bottom}
+.SP_sandbox span,.SP_sandbox img{display:inline;}
+.SP_sandbox p,.SP_sandbox div{display:block;}
+.SP_sandbox ul,.SP_sandbox ol{padding-left:20px}
+.SP_sandbox button,.SP_sandbox input,.SP_sandbox textarea{width:auto;border:0px;background:#fff none;font: normal;line-height: normal;text-transform: none;text-indent: 0px;text-shadow: none;display: inline-block;text-align: left;-moz-box-shadow:none !important;box-shadow:none !important;font-size: 13px !important; font-family: Helvetica, Arial, Verdana, sans-serif !important;}
+.SP_sandbox textarea { border: 1px solid #999; line-height: 131%; }
+
+/* General styling classes */
+.SP_sandbox {
+  z-index: 2147483647;
+}
+
+.SP_sandbox label[for] { cursor: pointer; }
+
+.SP_sandbox a, .SP_sandbox a:link, .SP_sandbox a:visited {
+  color: #14b9cc;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  -moz-transition: color .1s ease-in;
+  transition: color .1s ease-in;
+}
+.SP_sandbox a:hover, .SP_sandbox a:active {
+  font-weight: bold;
+  text-decoration: none;
+  color: #1bc2c9;
+}
+
+.SP_sandbox .SPOOL_close {
+  position: absolute;
+  top: -13px;
+  left: -13px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  background: transparent url('chrome://spool/skin/close.png') no-repeat 0 0;
+}
+
+.SP_sandbox .SPOOL_note {
+  padding: 7px 14px;
+  margin: 7px 0;
+  color: #fff;
+  text-align: center;
+  background-color: #1d1d1e;
+  -moz-border-radius: 5px;
+}
+
+/* More specific stylings based on ids */
+.SP_sandbox.SPOOL_popup .SPOOL_form {
+  position: relative;
+  top: 50%;
+  margin-top: -100px;
+  width: 240px;
+  padding: 7px 5px;
+  -moz-border-radius: 5px;
+}
+
+.SP_sandbox.SPOOL_popup header#SPOOL_branding {
+  position: relative;
+  display: block;
+  top: -7px;
+  left: -5px;
+  height: 32px;
+  text-align: center;
+  padding: 8px 10px 4px 10px;
+  width: 230px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #373737;
+  -moz-box-shadow: inset 0 1px 2px 0 rgba(256, 256, 256, .25);
+  background: #323232;
+  background: -moz-linear-gradient(bottom, #323232, #4f4f4f);
+}
+
+.SP_sandbox .SPOOL_form input:not([type='submit']) {
+  display: block;
+  font-size: 16px !important;
+  font-weight: bold;
+  height: 16px;
+  color: #5d5d5d;
+  width: 200px;
+  background-color: #fff;
+  border: 2px solid #e3e3e3;
+  padding: 14px;
+  margin: 0 0 7px 0;
+  -moz-border-radius: 8px;
+}
+.SP_sandbox .SPOOL_form input[type='submit'] { margin-top: 7px; }
+
+.SP_sandbox .SPOOL_button:not([disabled]), .SP_sandbox .SPOOL_button {
+  height: auto;
+  line-height: 138.5%;
+  width: 100%;
+  border: 0;
+  color: #fff !important;
+  font-size: 119% !important;
+  font-weight: bold;
+  text-shadow: 0 0 2px #000;
+  padding: 4px 8px;
+  cursor: pointer;
+  background-color: #179bab;
+  border: 1px solid #1b97a7;
+  background: -moz-linear-gradient(bottom, #107e90, #38b2bf) !important;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  box-shadow: none;
+  text-align: center;
+  -moz-appearance: none;
+}
+.SP_sandbox .SPOOL_button:not([disabled]):hover, .SP_sandbox .SPOOL_button:not([disabled]):focus {
+  background: -moz-linear-gradient(bottom, 0%, #1a8e9d, 100%, #1abdc7);
+  border-width: 2px;
+  padding: 3px 7px;
+  border-color: #23cae0;
+}
+.SP_sandbox .SPOOL_button:not([disabled]):active {
+  background: -moz-linear-gradient(top, 0%, #107e90, 100%, #38b2bf);
+}
+.SP_sandbox .SPOOL_button[disabled] {
+  border-color: #999;
+  background: -moz-linear-gradient(bottom, 0%, #5c5c5c, 100%, #a5a5a5);
+  cursor: default;
+}
+.SP_sandbox .SPOOL_button.SPOOL_white {
+  background: -moz-linear-gradient(bottom, #f5f5f5, #fff) !important;
+  border: 1px solid #ccc;
+  text-shadow: none;
+  color: #999 !important;
+}
+.SP_sandbox .SPOOL_button.SPOOL_white:hover {
+  border-width: 1px;
+  padding: 4px 8px;
+  color: #179bab;
+  border-color: #aaa;
+}
+
+
+.SP_sandbox nav {
+  text-align: center;
+  margin: 10px 5px;
+}
+
+.SP_sandbox .SP_tooltip {
+  position: absolute;
+  background-color: #fff;
+  padding: 10px;
+  width: 200px;
+  height: auto;
+  -moz-border-radius: 5px;
+  -moz-box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.5);
+  z-index: 2147483647;
+}
+.SP_sandbox .SP_tooltip .SP_arrow {
+  position: absolute;
+  bottom: -9px;
+  left: 100px;
+  background: #fff;
+  display: inline-block;
+  border-top: 4px solid #fff;
+  border-right: 4px solid #fff;
+  width: 6px;
+  height: 6px;
+  margin: 4px 6px;
+  -moz-box-shadow: 2px -2px 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 2px -2px 3px 0 rgba(0, 0, 0, 0.5);
+  -moz-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+
+.SP_sandbox .SPOOL_error {
+  text-align: left;
+  -moz-transition: all .25s ease-out;
+}
+.SP_sandbox .SPOOL_error.SP_active {
+  background-color: #c65d3a;
+  color: #fff;
+}
+
+
+#SPOOL_toaster {
+  position: fixed;
+  top: 5px;
+  right: 15px;
+  z-index: 2147483647;
+  max-width: 550px;
+}
+
+#SPOOL_toaster .SPOOL_toast {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  width: auto;
+  margin: 16px 0 5px 0;
+  opacity: 1;
+  z-index: 2147483647;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-transition: opacity .25s ease-out;
+  -moz-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .1);
+}
+#SPOOL_toaster .SPOOL_toast > header {
+  position: relative;
+  display: inline-block;
+  padding: 14px 10px 0 10px;
+  border: 0;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  width: auto;
+}
+#SPOOL_toaster .SPOOL_toast header a.SPOOL_logo {
+  display: block;
+  width: 36px;
+  height: 17px;
+  overflow: hidden;
+  background: transparent url('chrome://spool/skin/spool_logo_toast.png') no-repeat 0 0;
+}
+
+#SPOOL_toaster .SPOOL_toast > .SPOOL_message {
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  vertical-align: top;
+  min-height: 30px;
+  width: 400px;
+  border-left: 1px solid #f2f2f2;
+  zoom: 1;
+}
+#SPOOL_toaster .SPOOL_toast > .SPOOL_message:before, #SPOOL_toaster .SPOOL_toast > .SPOOL_message:after { content: ""; display: table; }
+#SPOOL_toaster .SPOOL_toast > .SPOOL_message:after { clear: both; }
+
+#SPOOL_toaster .SPOOL_toast > .SPOOL_message > .SPOOL_flex1 { display: inline-block; max-width: 254px; }
+#SPOOL_toaster .SPOOL_toast > .SPOOL_message > .SPOOL_flex0 { display: inline-block; max-width: 140px; vertical-align: top; float: right; }
+
+#SPOOL_toaster .SPOOL_toast .SPOOL_message .SPOOL_button {
+  width: auto;
+  height: auto;
+  min-width: 140px;
+  font-size: 119% !important;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+#SPOOL_toaster .SPOOL_toast h1 {
+  height: auto;
+  font-size: 16px;
+  font-weight: bold !important;
+  font-variant: normal !important;
+  text-decoration: none;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_normal {
+  color: #333 !important;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_complete {
+  font-size: 16px;
+  color: #1d9cac !important;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_failed {
+  color: #c65d3a !important;
+}
+#SPOOL_toaster .SPOOL_toast h2 { font-weight: bold !important; }
+
+#SPOOL_toaster .SPOOL_toastfade {
+  opacity: 0;
+  -moz-transition: opacity .25s ease-out;
+}
+#SPOOL_toaster .SPOOL_toast p {
+  margin-top: 10px;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_warning {
+  display: inline-block;
+  font-size: 10px;
+  line-height: 10px;
+  vertical-align: top;
+  clear: both;
+  margin-top: 10px;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_warning:before {
+  content: url('chrome://spool/skin/warning.png');
+  margin-right: 4px;
+}
+
+/* for searching */
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > .SPOOL_button {
+  min-width: 75px;
+  float: right;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div {
+  display: inline-block;
+  max-width: 300px;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div h1 {
+  color: #595959 !important;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div textarea {
+  height: auto;
+  font-size: 16px !important;
+  font-weight: bold !important;
+  font-variant: normal !important;
+  text-decoration: none;
+  width: 290px;
+  padding: 3px;
+  border: 2px dotted #e3e3e3;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div aside {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin-left: 5px;
+  width: 15px;
+  height: 14px;
+  cursor: pointer;
+  background: transparent url('chrome://spool/skin/edit.png') no-repeat top left;
+  opacity: .45;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div:hover aside {
+  opacity: 1;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div textarea, #SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle > div .SP_counter, #SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle[editing] > div h1, #SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle[editing] > div aside { display: none; }
+#SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle[editing] > div textarea, #SPOOL_toaster .SPOOL_toast .SPOOL_pagetitle[editing] > div .SP_counter { display: block; }
+
+#SPOOL_toaster .SPOOL_toast .SP_counter {
+  display: block;
+  margin-top: 0;
+  text-align: right;
+  height: auto;
+  width: auto;
+}
+#SPOOL_toaster .SPOOL_toast .SP_counter span {
+  font-size: 85%;
+  color: #999;
+  font-weight: bold;
+  background-image: none;
+  line-height: 16px;
+  border-right: 1px solid #ccc;
+  padding-right: 5px;
+  margin-right: 5px;
+}
+#SPOOL_toaster .SPOOL_toast .SP_counter span[data-error="1"] {
+  color: #b92929;
+}
+#SPOOL_toaster .SPOOL_toast .SP_gear {
+  position: relative;
+  display: inline-block;
+  float: right;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background: transparent url('chrome://spool/skin/gears.png') no-repeat top left;
+  overflow: hidden;
+  vertical-align: -4px;
+  opacity: 0.8;
+}
+#SPOOL_toaster .SPOOL_toast .SP_gear:hover, #SPOOL_toaster .SPOOL_toast .SP_lock span:hover { opacity: 1; }
+
+#SPOOL_toaster .SPOOL_toast .SP_question {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: top;
+}
+#SPOOL_toaster .SPOOL_toast .SP_question:before {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: -20px;
+  content: url('chrome://spool/skin/gears.png');
+  clip: rect(0 40px 16px 24px);
+  opacity: 0.8;
+}
+#SPOOL_toaster .SPOOL_toast .SP_question .SP_answer {
+  position: absolute;
+  font-size: 85%;
+  top: 14px;
+  left: -100px;
+  line-height: 123.1%;
+  min-width: 200px;
+  background: #f2f2f2;
+  padding: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, .1);
+  opacity: 0;
+  -moz-transition: opacity .2s ease-in;
+}
+#SPOOL_toaster .SPOOL_toast .SP_question .SP_answer a { font-size: 100%; font-weight: normal; }
+
+
+#SPOOL_toaster .SPOOL_toast .SP_lock {
+  margin: 0;
+  text-align: center;
+  font-size: 85%;
+  color: #999;
+}
+#SPOOL_toaster .SPOOL_toast .SP_lock span {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background: transparent url('chrome://spool/skin/gears.png') no-repeat -16px 0;
+  overflow: hidden;
+  opacity: 0.8;
+  margin: 0 3px;
+}
+#SPOOL_toaster .SPOOL_toast .SP_lock span.SP_public {
+  background-position: -16px -8px;
+}
+
+#SPOOL_toaster .SPOOL_toast .SPOOL_notesbox {
+  max-width: 400px;
+  padding: 6px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #e3e3e3;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_notesbox textarea {
+  width: 390px;
+  max-width: 390px;
+  height: 50px;
+  padding: 5px;
+  display: block;
+  margin-bottom: 6px;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_notesbox #SP_recommend {
+  clear: both;
+  display: inline-block;
+  margin-right: 3px;
+}
+#SPOOL_toaster .SPOOL_toast .SPOOL_notesbox label {
+  display: inline-block;
+  font-weight: bold;
+  width: auto;
+}
+/*
+#SPOOL_toaster .SPOOL_toast .SPOOL_notesbox a {
+  float: right;
+  display: inline-block;
+  font-weight: normal;
+}
+*/
+#SPOOL_toaster .SPOOL_toast .SPOOL_notesbox .SP_counter { float: right; }
+
+#SPOOL_toaster .SPOOL_toast .SP_status {
+  position: absolute;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 131%;
+  font-weight: bold;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  height: 100%;
+  -moz-box-orient: vertical;
+  -moz-box-pack: center;
+  -moz-transition: background-color .15s ease-in;
+}
+#SPOOL_toaster .SPOOL_toast .SP_status[showing] {
+  background-color: rgba(255, 255, 255, .9);
+}
+#SPOOL_toaster .SPOOL_toast .SP_status a {
+  display: block;
+  text-align: right;
+  font-size: 85%;
+}
+#SPOOL_toaster .SPOOL_toast .SP_loading {
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin-left: 6px;
+  overflow: hidden;
+  background: transparent url('chrome://spool/skin/small_loading.gif') no-repeat top left;
+}
+
+/* spool reader item */
+.SP_spoolthis {
+  position: relative;
+  display: inline;
+  border: 0;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+}
+.SP_spoolthis.SP_spoolthis_button {
+  width: 55px;
+  height: 20px;
+}
