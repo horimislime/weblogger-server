@@ -25,7 +25,6 @@ public class LogViewController {
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String view(Model model) {
-
 		// TODO:select ID
 		Map<String, Long> dataSet = webLoggerService.getDailyBrowseCount(0);
 

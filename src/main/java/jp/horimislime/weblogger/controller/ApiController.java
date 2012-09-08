@@ -1,11 +1,8 @@
 package jp.horimislime.weblogger.controller;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.net.URLDecoder;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 /**
  * Handle connection with browser extension
@@ -84,47 +80,19 @@ public class ApiController {
 	 * @return
 	 */
 	@ResponseBody
-	@RequestMapping(value = "/upload", method = RequestMethod.POST)
-	public String upload(HttpServletRequest req, HttpServletResponse resp) {
+	@RequestMapping(value = "/upload", method = RequestMethod.GET)
+	public String upload(@RequestParam(required = true) String time,
+			@RequestParam(required = true) String url) {
 
-		BufferedReader reader = null;
 		Map<String, String> responseJson = new HashMap<String, String>();
-
 		try {
-			reader = new BufferedReader(new InputStreamReader(req.getInputStream()));
-			String log = new String(), line = null;
-
-			while ((line = reader.readLine()) != null) {
-				log += line;
-			}
-			if (log.length() == 0) {
-				throw new Exception("JSON is empty.");
-			}
-			log = URLDecoder.decode(log, "UTF-8");
-			logger.info(log);
-
-			Map<String, String> json = new Gson().fromJson(log,
-					new TypeToken<HashMap<String, String>>() {
-					}.getType());
-
-			webLoggerService.insert(Integer.parseInt(json.get("userid")), json.get("title"),
-					json.get("url"), new Date(Long.valueOf(json.get("time"))));
-
+			webLoggerService.insert(0, "", url, new Date(Long.valueOf(time)));
 			responseJson.put("status", "success");
 			responseJson.put("total", String.valueOf(1));
 
 		} catch (Exception e) {
 			e.printStackTrace();
 			responseJson.put("status", "error");
-
-		} finally {
-			try {
-				if (reader != null) {
-					reader.close();
-				}
-			} catch (IOException e) {
-				logger.error(e);
-			}
 		}
 		return new Gson().toJson(responseJson);
 	}
